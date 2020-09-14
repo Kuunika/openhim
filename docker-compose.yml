@@ -10,7 +10,7 @@ services:
       - ./mongodata:/data/db
   core:
     container_name: openhim-core
-    image: ibwighane/kuunika-openhim-core:0.0.1
+    image: kuunika/openhim-core:0.0.1
     environment:
       - mongo_url=mongodb://mongo/openhim
       - mongo_atnaUrl=mongodb://mongo/openhim
@@ -29,7 +29,7 @@ services:
   
   console:
     container_name: openhim-console
-    image: jembi/openhim-console
+    image: kuunika/openhim-console
     ports:
         - "9000:80"
     volumes:

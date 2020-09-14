@@ -29,7 +29,7 @@ services:
   
   console:
     container_name: openhim-console
-    image: kuunika/openhim-console
+    image: kuunika/openhim-console:0.0.1
     ports:
         - "9000:80"
     volumes:

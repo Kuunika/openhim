@@ -6,6 +6,7 @@ services:
     ports:
       - "27017:27017"
     image: mongo:3.4
+    restart: always
     volumes:
       - ./mongodata:/data/db
   core:
@@ -14,6 +15,7 @@ services:
     environment:
       - mongo_url=mongodb://mongo/openhim
       - mongo_atnaUrl=mongodb://mongo/openhim
+    restart: always
     volumes: 
       - ./certificates:/usr/local/share/ca-certificates
     ports:
@@ -32,6 +34,7 @@ services:
     image: kuunika/openhim-console:0.0.1
     ports:
         - "9000:80"
+    restart: always
     volumes:
       - ./default.json:/usr/share/nginx/html/config/default.json
     
